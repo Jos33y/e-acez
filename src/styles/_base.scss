@@ -1,0 +1,53 @@
+.container#content {
+  margin-top: 60px;
+}
+body {
+  background-color: $light-gray;
+}
+a {
+  color: #0056b3;
+  &:hover {
+    color: #007bff;
+    text-decoration: none;
+  }
+}
+body {
+  font-family: $site-font;
+}
+h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.navbar{
+  background-color: #17192e;
+  box-shadow: 1px 1px 10px #888;
+}
+.navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-brand {
+
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  margin: 5px;
+  margin-left: 10px;
+  font-family: 'PT Serif', serif;
+  text-transform: uppercase;
+  &:hover {
+    color: #007bff;
+  }
+}
+.logo-head{
+  margin-left: 3px;
+  font-size: 22px;
+  color: white;
+  font-weight: 700;
+  font-family: 'PT Serif', serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
