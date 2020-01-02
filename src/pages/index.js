@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
+import SideBar from "../components/sidebar"
 import SEO from "../components/seo"
 import { StaticQuery, graphql } from "gatsby"
 import Post from "../components/blogpost"
@@ -8,7 +9,7 @@ import  {Col, Row} from 'reactstrap'
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-
+        <h2> Blog Post </h2>
       <h1>Blog Post</h1>
       <Row>
         <Col md="8">
@@ -19,9 +20,10 @@ const IndexPage = () => (
           <div>
             {data.allMarkdownRemark.edges.map(({ node }) => (
             <Post 
+            key={node.id}
             title= {node.frontmatter.title }
             author={node.frontmatter.author}
-            path={node.frontmatter.path}
+            slug={node.fields.slug}
             date={node.frontmatter.date}
             body={node.excerpt} 
             fluid={node.frontmatter.image.childImageSharp.fluid}
@@ -35,7 +37,8 @@ const IndexPage = () => (
 
         </Col>
         <Col md="4">
-          <div style= {{width: "100%", height: "100%", backgroundColor: "rgba(0,0,0,0.4"}}> </div>
+
+          <SideBar />
 
         </Col>
 
@@ -54,7 +57,6 @@ query{
           title
           date(formatString: "MM - DD - YYYY")
           author
-          path
           tags
           image{
             childImageSharp{
@@ -63,6 +65,10 @@ query{
               }
             }
           }
+          
+          }
+          fields{
+            slug
         }
         excerpt
         
