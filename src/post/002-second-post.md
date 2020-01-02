@@ -4,6 +4,9 @@ date: 2020-01-02
 author: 'Adeola Man'
 path: 'second-post'
 image: ../images/know.jpg
+tags:
+    - knowledge
+    - eacez
 ---
 
 I think this should tell you specifiaclly what u need to know, I think this should tell you specifiaclly what u need to know, I think this should tell you specifiaclly what u need to know.

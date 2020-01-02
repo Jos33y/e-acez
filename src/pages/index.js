@@ -8,7 +8,7 @@ import  {Col, Row} from 'reactstrap'
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <div className="container">
+
       <h1>Blog Post</h1>
       <Row>
         <Col md="8">
@@ -25,6 +25,7 @@ const IndexPage = () => (
             date={node.frontmatter.date}
             body={node.excerpt} 
             fluid={node.frontmatter.image.childImageSharp.fluid}
+            tags={node.frontmatter.tags}
 
             />
             ))}
@@ -39,9 +40,7 @@ const IndexPage = () => (
         </Col>
 
       </Row>
-  
 
-      </div>
   </Layout>
 )
 
@@ -56,6 +55,7 @@ query{
           date(formatString: "MM - DD - YYYY")
           author
           path
+          tags
           image{
             childImageSharp{
               fluid(maxWidth: 600){
