@@ -1,18 +1,12 @@
 import React from "react"
 import Layout from "../components/layout"
-import SideBar from "../components/sidebar"
 import SEO from "../components/seo"
 import { StaticQuery, graphql } from "gatsby"
 import Post from "../components/blogpost"
-import  {Col, Row} from 'reactstrap'
 
 const IndexPage = () => (
-  <Layout>
+  <Layout pageTitle="Blog Post">
     <SEO title="Home" />
-        <h2> Blog Post </h2>
-      <h1>Blog Post</h1>
-      <Row>
-        <Col md="8">
         <StaticQuery 
       query={indexQuery} 
       render={data => {
@@ -33,17 +27,9 @@ const IndexPage = () => (
             ))}
           </div>
         )
-      }}/>
+      }}
 
-        </Col>
-        <Col md="4">
-
-          <SideBar />
-
-        </Col>
-
-      </Row>
-
+      />
   </Layout>
 )
 
