@@ -1,5 +1,6 @@
-import PropTypes from "prop-types"
-import React , { useState } from "react"
+import React, { useState } from 'react';
+import { graphql, useStaticQuery} from "gatsby"
+import Img from "gatsby-image"
 import {
   Collapse,
   Navbar,
@@ -11,24 +12,39 @@ import {
 } from 'reactstrap';
 
 
-const Header = ({data}) => {
+const Header = (props) => {
+ 
+  const data = useStaticQuery(graphql`
+  query Images {
+    file ( relativePath: {eq: "eicon.png"}){
+      id
+      childImageSharp{
+        fixed(
+          width:50 , height:50
+        )
+        {
+            ...GatsbyImageSharpFixed
+        }
+      }
+      
+    }
+  } 
+  `)
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-  
+      
       <Navbar navbar fixed="top" light expand="sm" id="mainNav">
      <div className="container">
         <NavbarBrand href="/">
-        <span className="logo-head">e-acez </span>
+          <Img className="logo" fixed={data.file.childImageSharp.fixed } />
+          
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
-            <NavItem>
-              <NavLink href="/">Blog</NavLink>
-            </NavItem>
             <NavItem>
               <NavLink href="/about">About</NavLink>
             </NavItem>
@@ -43,16 +59,9 @@ const Header = ({data}) => {
         </div>
       </Navbar>
     
+    
 )
 
   }
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header
