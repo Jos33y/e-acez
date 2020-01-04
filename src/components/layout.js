@@ -38,7 +38,7 @@ const Layout = ({ authorImageFluid, children, pageTitle, postAuthor}) => {
       <div className="container" id="content">
       <br/>
       <br/>
-      <h1>{pageTitle}</h1>
+      <h3>{pageTitle}</h3>
       <Row>
         <Col md="8">
         {children}

@@ -1,6 +1,7 @@
-const { slugify } = require('./src/util/utilityFunctions');
+const { slugify } = require('./src/util/utilityFunctions')
 const path = require('path')
 const authors = require('./src/util/authors')
+
 
 exports.onCreateNode = ({ node, actions}) => {
     const { createNodeField } = actions
@@ -8,23 +9,24 @@ exports.onCreateNode = ({ node, actions}) => {
         const slugFromTitle = slugify(node.frontmatter.title)
         createNodeField({
             node,
-            name: 'slug',
+            name: `slug`,
             value: slugFromTitle,
         })
     }
 }
 
-exports.createPages = ({ actions, graphql }) => {
+exports.createPages = async ({ actions, graphql }) => {
     const { createPage } = actions;
     const singlePostTemplate = path.resolve('src/templates/single-post.js')
 
-    return graphql(`
+   const res = await graphql(`
     {
         allMarkdownRemark {
             edges {
                 node{
                     frontmatter{
-                        author          
+                        author  
+                                
                     }
                     fields{
                         slug
@@ -33,16 +35,12 @@ exports.createPages = ({ actions, graphql }) => {
             }
         }
     }
-    `).then(res => {
-        if(res.errors) return Promise.reject(res.errors)
-
-        const posts = res.data.allMarkdownRemark.edges
-        
-        posts.forEach(({node}) => {
-            createPage({
-                path: node.fields.slug,
-                component: singlePostTemplate,
-                context: {
+    `) 
+    res.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        createPage({
+          path: node.fields.slug,
+          component: singlePostTemplate,
+          context: {
                     //passing slug for template to use to get post
                     slug: node.fields.slug,
                     //find author image url
@@ -50,5 +48,8 @@ exports.createPages = ({ actions, graphql }) => {
                 }
             })
         })
-    })
 }
+
+
+
+

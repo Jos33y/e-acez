@@ -1,7 +1,7 @@
 ---
 title: 'Third Post All About e-acez'
 date: 2020-01-03
-author: 'Laughter Jazz'
+author: 'Oginni Laughter'
 image: ../images/all.jpg
 tags:
     - About

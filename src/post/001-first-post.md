@@ -1,7 +1,7 @@
 ---
 title: 'First Post Introduction'
 date: 2020-01-01
-author: 'Laughter Jazz'
+author: 'Oginni Laughter'
 image: ../images/welcome.jpg
 tags: 
     - welcome

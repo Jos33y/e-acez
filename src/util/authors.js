@@ -1,23 +1,23 @@
 const authors = [
     {
-        name: 'Laughter Jazz',
+        name: 'Oginni Laughter',
         imageUrl: 'laff.jpg',
-        bio: 'Laughter jazz is  a content writer and also a drummer',
+        bio: 'C.E.O of E-acez and Content writer',
         facebook: 'https://www.facebook.com/',
-        twitter: 'https://www.twitter.com/',
+        twitter: 'https://www.twitter.com/lafterjazz/',
         instagram: 'https://www.instagram.com/',
-        email: 'https://www.gmail.com/',
+        email: 'Laughterjass@gmail.com',
     },
 
     {
-        name: 'Adeola Man',
+        name: 'Adeola Adeyemi',
         imageUrl: 'ade.jpg',
-        bio: 'Addeola Man is  a content writer and also a drummer',
-        facebook: 'https://www.facebook.com/',
-        twitter: 'https://www.twitter.com/',
-        instagram: 'https://www.instagram.com/',
-        email: 'https://www.gmail.com/',
+        bio: 'Media, Content writer, and Digital Marketer',
+        facebook: 'https://www.facebook.com/adeydeola/',
+        twitter: 'https://www.twitter.com/deolaadeyemi/',
+        instagram: 'https://www.instagram.com/deoladeyemi/',
+        email: 'Adey.deola@gmail.com',
     },
 ]
 
-module.exports = authors
+ module.exports = authors

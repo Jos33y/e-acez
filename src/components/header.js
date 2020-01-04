@@ -45,14 +45,14 @@ const Header = (props) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
+          <NavItem>
+              <NavLink href="/">Home</NavLink>
+            </NavItem>
             <NavItem>
               <NavLink href="/about">About</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/team">Team</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/tags">Tags</NavLink>
             </NavItem>
             </Nav>
         </Collapse>

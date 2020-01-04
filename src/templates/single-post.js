@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../components/layout'
 import SEO from "../components/seo"
 import { graphql, Link } from 'gatsby'
-import {Badge, Card, CardBody, CardSubtitle} from 'reactstrap'
+import {Badge} from 'reactstrap'
 import Img from 'gatsby-image'
 import { slugify } from '../util/utilityFunctions'
 import authors from '../util/authors'
@@ -26,14 +26,14 @@ const SinglePost = ({data, pageContext}) => {
     return ( 
         <Layout pageTitle={post.title} postAuthor={author} authorImageFluid={data.file.childImageSharp.fluid}>
             <SEO title={post.title} />
-                   <Card>
+                            <br/>
                        <Img className="card-image-top" fluid={post.image.childImageSharp.fluid} />
-                       <CardBody>
-                           <CardSubtitle>
-                               <span className="text-info">{post.date}</span> by {' '}
-                               <span className="text-info">{post.author}</span>
-                           </CardSubtitle>
-                           <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}/>
+                       
+                           <br/>
+                              <p> <span className="text-info">{post.date}</span> by {' '}
+                               <span className="text-info">{post.author}</span> </p>
+
+                           <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}></div>
                            <ul className="ul-style">
                                {post.tags.map(tag => (
                                   <li key={tag}>
@@ -43,8 +43,7 @@ const SinglePost = ({data, pageContext}) => {
                                   </li>
                                ))}
                            </ul>
-                       </CardBody>
-                   </Card>
+                       
                    <h3 className="text-center">
                         Share this post
                     </h3>
