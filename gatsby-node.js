@@ -18,7 +18,7 @@ exports.onCreateNode = ({ node, actions}) => {
 exports.createPages = async ({ actions, graphql }) => {
     const { createPage } = actions;
     const singlePostTemplate = path.resolve('src/templates/single-post.js')
-
+    const postListTemplate  = path.resolve('src/templates/post-list.js') 
    const res = await graphql(`
     {
         allMarkdownRemark {
