@@ -36,14 +36,14 @@ const IndexPage = () => (
 const indexQuery = graphql`
 query{
   allMarkdownRemark( sort: {fields: [frontmatter___date], order: DESC}
-    limit: 2
+
     ) {
     edges{
       node{
         id
         frontmatter{
           title
-          date(formatString: "MM - DD - YYYY")
+          date(formatString: "MMMM  Do, YYYY")
           author
           tags
           image{

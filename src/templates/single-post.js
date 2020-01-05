@@ -26,14 +26,23 @@ const SinglePost = ({data, pageContext}) => {
     return ( 
         <Layout pageTitle={post.title} postAuthor={author} authorImageFluid={data.file.childImageSharp.fluid}>
             <SEO title={post.title} />
-                            <br/>
-                       <Img className="card-image-top" fluid={post.image.childImageSharp.fluid} />
+                            
+                            <p class="lead">
+                              by {post.author}
+                            </p>
+
+                             <hr/>
+                          
+                                <p>Posted on {post.date} </p>
+
+                                <hr/>
+                       <Img className="card-image-top rounded image-card" fluid={post.image.childImageSharp.fluid} />
                        
-                           <br/>
-                              <p> <span className="text-info">{post.date}</span> by {' '}
-                               <span className="text-info">{post.author}</span> </p>
+                       <hr/>
 
                            <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}></div>
+                           <hr/>
+
                            <ul className="ul-style">
                                {post.tags.map(tag => (
                                   <li key={tag}>
@@ -43,10 +52,13 @@ const SinglePost = ({data, pageContext}) => {
                                   </li>
                                ))}
                            </ul>
+
+                           <hr/>
+
                        
-                   <h3 className="text-center">
+                   <h4 className="text-center font-weight-bold">
                         Share this post
-                    </h3>
+                    </h4>
                     <div className="text-center social-share-links">
                             <ul>
                                 <li>
@@ -111,11 +123,11 @@ export const postQuery = graphql`
             frontmatter{
                 title
                 author
-                date(formatString: "MM-DD-YYYY")
+                date(formatString: "MMMM Do, YYYY")
                 tags
                 image{
                     childImageSharp{
-                        fluid(maxWidth: 700){
+                        fluid(maxWidth: 600){
                             ...GatsbyImageSharpFluid
                         }
                     }

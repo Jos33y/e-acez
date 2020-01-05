@@ -16,7 +16,7 @@ const TeamPage = () => (
       <div className="col-md-8">
         <Card style={{ midHeight: '100%' }}>
           <CardBody>
-            <CardTitle>{authors[0].name} </CardTitle>
+            <CardTitle className="font-weight-bold">{authors[0].name} </CardTitle>
             <CardText>{authors[0].bio}</CardText>
               <br/>
           </CardBody>
@@ -31,7 +31,7 @@ const TeamPage = () => (
       <div className="col-md-8">
         <Card style={{ midHeight: '100%' }}>
           <CardBody>
-            <CardTitle>{authors[1].name} </CardTitle>
+            <CardTitle className="font-weight-bold">{authors[1].name} </CardTitle>
             <CardText>{authors[1].bio}</CardText>
               <br/>
           </CardBody>

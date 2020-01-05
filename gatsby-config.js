@@ -37,6 +37,13 @@ module.exports = {
         icon: `src/images/eiconweb.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `myamyxmzzmzr`,
+        accessToken: `D5Bx8FZsqanjGA01l5ULL0NIxtEqNyKVAVqLgQogmWw`
+      },
+    },
     `gatsby-plugin-sass`,
     `gatsby-plugin-catch-links`,
     
